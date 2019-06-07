@@ -60,6 +60,7 @@ namespace WeddingStoreAPI.Services
                 myUpdate.GiaTien = obj.GiaTien;
                 myUpdate.DonVi = obj.DonVi;
                 myUpdate.AnhMoTa = obj.AnhMoTa;
+                myUpdate.IsNhap = obj.IsNhap;
 
                 _context.KhoVatLieu.Update(myUpdate);
                 _context.SaveChanges();

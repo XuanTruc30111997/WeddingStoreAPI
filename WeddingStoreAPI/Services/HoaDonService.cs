@@ -53,6 +53,7 @@ namespace WeddingStoreAPI.Services
                 myUpdate.NgayThaoDo = obj.NgayThaoDo;
                 myUpdate.NgayTrangTri = obj.NgayTrangTri;
                 myUpdate.TongTien = obj.TongTien;
+                myUpdate.TinhTrang = obj.TinhTrang;
 
                 _context.HoaDon.Update(myUpdate);
                 _context.SaveChanges();
