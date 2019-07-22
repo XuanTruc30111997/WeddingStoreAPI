@@ -60,6 +60,7 @@ namespace WeddingStoreAPI
             services.AddScoped<IDataService<ChiTietHoaDonModel>, ChiTietHoaDonService>();
             services.AddScoped<IDataService<ChiTietDonGiaNhapHangModel>, ChiTietDonGiaNhapHangService>();
             services.AddScoped<IDataService<TaiKhoanModel>, TaiKhoanService>();
+            services.AddScoped<IVatLieuService, VatLieuService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddDbContext<WeddingStoreContext>(options
                 => options.UseSqlServer(Configuration.GetConnectionString("WeddingStoreConnection")));

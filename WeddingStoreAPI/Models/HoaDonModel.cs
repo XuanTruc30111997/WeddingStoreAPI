@@ -18,6 +18,8 @@ namespace WeddingStoreAPI.Models
         public DateTime NgayThaoDo { get; set; }
         public float TongTien { get; set; }
         public int TinhTrang { get; set; }
+        public float TienCoc { get; set; }
+        public bool IsThanhToan { get; set; }
 
         public IList<PhatSinhModel> PhatSinhs { get; set; }
         public IList<PhanCongModel> PhanCongs { get; set; }

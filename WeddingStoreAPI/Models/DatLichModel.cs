@@ -15,7 +15,7 @@ namespace WeddingStoreAPI.Models
         public Nullable<System.DateTime> NgayCuoi { get; set; }
         public Nullable<System.DateTime> NgayTrangTri { get; set; }
         public Nullable<System.TimeSpan> ThoiGianTrangTri { get; set; }
-        public Nullable<bool> TrangThaiDuyet { get; set; }
+        public Nullable<int> TinhTrang { get; set; }
 
         public virtual KhachHangModel KhachHang { get; set; }
     }

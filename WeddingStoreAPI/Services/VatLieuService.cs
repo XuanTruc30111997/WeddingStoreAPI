@@ -9,7 +9,7 @@ using WeddingStoreAPI.Context;
 
 namespace WeddingStoreAPI.Services
 {
-    public class VatLieuService : IDataService<VatLieuModel>
+    public class VatLieuService : IDataService<VatLieuModel>, IVatLieuService
     {
         private readonly WeddingStoreContext _context;
         public VatLieuService(WeddingStoreContext context)
@@ -31,6 +31,11 @@ namespace WeddingStoreAPI.Services
         public List<VatLieuModel> GetData()
         {
             return _context.KhoVatLieu.ToList();
+        }
+
+        public List<VatLieuModel> GetTenItems(int num)
+        {
+            return _context.KhoVatLieu.Skip(num).Take(10).ToList();
         }
 
         public void InsertData(VatLieuModel obj)
