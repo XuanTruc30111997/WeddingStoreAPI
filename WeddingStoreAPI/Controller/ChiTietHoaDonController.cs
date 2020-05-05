@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using WeddingStoreAPI.Models;
 using WeddingStoreAPI.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
+using WeddingStoreAPI.Hubs;
 
 namespace WeddingStoreAPI.Controller
 {
@@ -13,9 +15,11 @@ namespace WeddingStoreAPI.Controller
     public class ChiTietHoaDonController : ControllerBase
     {
         private readonly IDataService<ChiTietHoaDonModel> _chiTietHoaDon;
-        public ChiTietHoaDonController(IDataService<ChiTietHoaDonModel> chiTietHoaDon)
+        IHubContext<MessagesHub> Hub;
+        public ChiTietHoaDonController(IDataService<ChiTietHoaDonModel> chiTietHoaDon,IHubContext<MessagesHub> hub)
         {
             _chiTietHoaDon = chiTietHoaDon;
+            Hub = hub;
         }
 
         [HttpGet]
@@ -28,6 +32,21 @@ namespace WeddingStoreAPI.Controller
         public void Post(ChiTietHoaDonModel chiTietHoaDon)
         {
             _chiTietHoaDon.InsertData(chiTietHoaDon);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> PostSignalR(ChiTietHoaDonModel chiTietHoaDon)
+        {
+            try
+            {
+                _chiTietHoaDon.InsertData(chiTietHoaDon);
+                await Hub.Clients.All.SendAsync("NewChiTiet", chiTietHoaDon);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Error while creating");
+            }
+            return Ok(chiTietHoaDon);
         }
 
         [HttpPut]

@@ -13,6 +13,8 @@ using WeddingStoreAPI.Models;
 using WeddingStoreAPI.Context;
 using WeddingStoreAPI.Interfaces;
 using WeddingStoreAPI.Services;
+using WeddingStoreAPI.Hubs;
+using Microsoft.OpenApi.Models;
 
 namespace WeddingStoreAPI
 {
@@ -42,6 +44,7 @@ namespace WeddingStoreAPI
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddMvc();
+            services.AddSignalR();
             //services.AddSingleton<IVatLieuRepository, MockVatLieuRepository>();
             //services.AddScoped<IVatLieuRepository, Ahihi>();
             services.AddSingleton(Configuration);
@@ -64,6 +67,10 @@ namespace WeddingStoreAPI
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddDbContext<WeddingStoreContext>(options
                 => options.UseSqlServer(Configuration.GetConnectionString("WeddingStoreConnection")));
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+            }); ;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -81,6 +88,17 @@ namespace WeddingStoreAPI
             {
                 route.MapRoute("default", "{controller=Home}/{action=Index}/{maVL?}");
                 //route.MapRoute("default", "{controller}/{action}/{id?}");
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<MessagesHub>("/hubs/messages");
             });
 
             app.Run(async (context) =>

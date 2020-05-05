@@ -18,7 +18,6 @@ D:\KhoaLuan\Project\WeddingStoreAPI\WeddingStoreAPI\bin\Release\netcoreapp2.2\We
 D:\KhoaLuan\Project\WeddingStoreAPI\WeddingStoreAPI\bin\Release\netcoreapp2.2\WeddingStoreAPI.dll
 D:\KhoaLuan\Project\WeddingStoreAPI\WeddingStoreAPI\bin\Release\netcoreapp2.2\WeddingStoreAPI.pdb
 D:\KhoaLuan\Project\WeddingStoreAPI\WeddingStoreAPI\obj\Release\netcoreapp2.2\WeddingStoreAPI.csprojAssemblyReference.cache
-D:\KhoaLuan\Project\WeddingStoreAPI\WeddingStoreAPI\obj\Release\netcoreapp2.2\WeddingStoreAPI.csproj.CoreCompileInputs.cache
 D:\KhoaLuan\Project\WeddingStoreAPI\WeddingStoreAPI\obj\Release\netcoreapp2.2\WeddingStoreAPI.RazorAssemblyInfo.cache
 D:\KhoaLuan\Project\WeddingStoreAPI\WeddingStoreAPI\obj\Release\netcoreapp2.2\WeddingStoreAPI.RazorAssemblyInfo.cs
 D:\KhoaLuan\Project\WeddingStoreAPI\WeddingStoreAPI\obj\Release\netcoreapp2.2\WeddingStoreAPI.AssemblyInfoInputs.cache
@@ -26,3 +25,5 @@ D:\KhoaLuan\Project\WeddingStoreAPI\WeddingStoreAPI\obj\Release\netcoreapp2.2\We
 D:\KhoaLuan\Project\WeddingStoreAPI\WeddingStoreAPI\obj\Release\netcoreapp2.2\WeddingStoreAPI.RazorTargetAssemblyInfo.cache
 D:\KhoaLuan\Project\WeddingStoreAPI\WeddingStoreAPI\obj\Release\netcoreapp2.2\WeddingStoreAPI.dll
 D:\KhoaLuan\Project\WeddingStoreAPI\WeddingStoreAPI\obj\Release\netcoreapp2.2\WeddingStoreAPI.pdb
+D:\KhoaLuan\Project\WeddingStoreAPI\WeddingStoreAPI\bin\Release\netcoreapp2.2\appsettings.Development.json
+D:\KhoaLuan\Project\WeddingStoreAPI\WeddingStoreAPI\bin\Release\netcoreapp2.2\appsettings.json
